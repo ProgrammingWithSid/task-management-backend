@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
-    path('auth/tasks/',include('taskapp.urls'))
+    path('',include('taskapp.urls')),
+    path('auth/user/',include('users.urls')),
 ]
