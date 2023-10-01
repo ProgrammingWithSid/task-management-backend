@@ -89,7 +89,7 @@ CORS_ALLOW_CREDENTIALS = True
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-LOCAL_DB = ENV.bool("LOCAL_DB", False)
+LOCAL_DB = False
 print(LOCAL_DB)
 
 # DATABASE_ROUTERS = ['auth.dbrouter.CheckerRouter'] 
