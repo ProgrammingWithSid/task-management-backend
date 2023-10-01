@@ -89,11 +89,11 @@ CORS_ALLOW_CREDENTIALS = True
 DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME" : 'task_management',
+            "NAME" : 'railway',
             "USER" : 'postgres',
-            "PASSWORD" :'1234',
-            "HOST" :'localhost',
-            "PORT" : '5432',
+            "PASSWORD" :'6y79NsNKot12SljxiTr4',
+            "HOST" :'containers-us-west-205.railway.app',
+            "PORT" : '5863',
             # "NAME": ENV.str("DB_NAME", None),
             # "USER": ENV.str("DB_USER", None),
             # "PASSWORD": ENV.str("DB_PASSWORD", None),
