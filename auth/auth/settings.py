@@ -12,10 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os,datetime
-from environ import Env
 
-ENV = Env()
-Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -89,23 +86,7 @@ CORS_ALLOW_CREDENTIALS = True
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-LOCAL_DB = False
-print(LOCAL_DB)
-
-# DATABASE_ROUTERS = ['auth.dbrouter.CheckerRouter'] 
-
-if LOCAL_DB:
-    # Database
-    # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        }
-    }
-else:
-    DATABASES = {
+DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
             "NAME" : 'task_management',
@@ -121,12 +102,12 @@ else:
         }
     }
 
-EMAIL_BACKEND = ENV.str('EMAIL_BACKEND',None)
-EMAIL_HOST = ENV.str('EMAIL_HOST',None)
-EMAIL_PORT = ENV.str('EMAIL_PORT',None)
-EMAIL_HOST_USER = ENV.str('EMAIL_HOST_USER',None)
-EMAIL_HOST_PASSWORD = ENV.str('EMAIL_HOST_PASSWORD',None)
-EMAIL_USE_TLS = True
+# EMAIL_BACKEND = ENV.str('EMAIL_BACKEND',None)
+# EMAIL_HOST = ENV.str('EMAIL_HOST',None)
+# EMAIL_PORT = ENV.str('EMAIL_PORT',None)
+# EMAIL_HOST_USER = ENV.str('EMAIL_HOST_USER',None)
+# EMAIL_HOST_PASSWORD = ENV.str('EMAIL_HOST_PASSWORD',None)
+# EMAIL_USE_TLS = True
 
 
 # Password validation
