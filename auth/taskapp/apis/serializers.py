@@ -5,6 +5,6 @@ from users.serializers import CustomUserCreateSerializer
 class TaskAppSerializer(serializers.ModelSerializer):
     class Meta:
         model = TaskApp
-        fields = '__all__'
+        fields = ['uuid','taskName','description']
 
 

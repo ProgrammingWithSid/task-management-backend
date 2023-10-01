@@ -9,5 +9,5 @@ class TaskApp(models.Model):
     user = models.ForeignKey(UserAccount,on_delete=models.CASCADE)
     taskName = models.CharField(max_length=50)
     description = models.CharField(max_length=300)
-    completedTill = models.DateTimeField()
+    completedTill = models.DateTimeField(null=True)
     createdAt = models.DateTimeField(auto_now_add=True)
