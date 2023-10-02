@@ -90,32 +90,32 @@ print(LOCAL_DB)
 
 # DATABASE_ROUTERS = ['auth.dbrouter.CheckerRouter'] 
 
-if LOCAL_DB:
+# if LOCAL_DB:
     # Database
     # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-    DATABASES = {
+DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         }
     }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME" : 'task_management',
-            "USER" : 'postgres',
-            "PASSWORD" :'1234',
-            "HOST" :'localhost',
-            "PORT" : '5432',
-            # "NAME": ENV.str("DB_NAME", None),
-            # "USER": ENV.str("DB_USER", None),
-            # "PASSWORD": ENV.str("DB_PASSWORD", None),
-            # "HOST": ENV.str("DB_HOST", None),
-            # "PORT": ENV.str("DB_PORT", None),
-        }
-    }
+# else:
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "django.db.backends.postgresql",
+#             "NAME" : 'task_management',
+#             "USER" : 'postgres',
+#             "PASSWORD" :'1234',
+#             "HOST" :'localhost',
+#             "PORT" : '5432',
+#             # "NAME": ENV.str("DB_NAME", None),
+#             # "USER": ENV.str("DB_USER", None),
+#             # "PASSWORD": ENV.str("DB_PASSWORD", None),
+#             # "HOST": ENV.str("DB_HOST", None),
+#             # "PORT": ENV.str("DB_PORT", None),
+#         }
+#     }
 # EMAIL_BACKEND = ENV.str('EMAIL_BACKEND',None)
 # EMAIL_HOST = ENV.str('EMAIL_HOST',None)
 # EMAIL_PORT = ENV.str('EMAIL_PORT',None)
