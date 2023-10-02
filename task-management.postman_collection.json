@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "2339e05b-49d6-4dbc-b865-7487d7652f32",
+		"name": "task-management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27382289"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"satender@gmail.com\",\r\n    \"name\": \"Admin\",\r\n    \"password\" : \"Sid@1234\",\r\n    \"re_password\" : \"Sid@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/auth/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "json web token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"satender@gmail.com\",\r\n    \"password\":\"Sid@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/auth/jwt/create/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"jwt",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh-token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5MzkzNTMzMSwiaWF0IjoxNjkzODQ4OTMxLCJqdGkiOiJlNjdhYTkyNGYwYzA0MzQzYjliZDNkZmZkMmJjYjc1ZiIsInVzZXJfaWQiOjF9.DUXo13af2zddrslDgv0__4Y_rf_IplCZR7XWhrIWAHc",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5Nzk2OTUwMywiaWF0IjoxNjk2MjQxNTAzLCJqdGkiOiJmZWNlZThkZGM2NWI0YzQyOGI0ZjM2MjI4Yjk3YjcwOSIsInVzZXJfaWQiOjN9.KA1W7BM22PZBdT2Ls18OLHiZ9EyH51RT5RJwNn7HUtI\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/auth/jwt/refresh/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"jwt",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listview",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MjcwNTE4LCJpYXQiOjE2OTYyNDE1MDMsImp0aSI6ImNjODMzMmU2MWU4NjQ3NGVhYTVhNDZhN2ZjN2U2NWYxIiwidXNlcl9pZCI6M30.KeBarrME08PmI8RWRzN2UY8q8_L_GbbE19HTEWdugZ8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/tasks/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detailview",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MjcwNTE4LCJpYXQiOjE2OTYyNDE1MDMsImp0aSI6ImNjODMzMmU2MWU4NjQ3NGVhYTVhNDZhN2ZjN2U2NWYxIiwidXNlcl9pZCI6M30.KeBarrME08PmI8RWRzN2UY8q8_L_GbbE19HTEWdugZ8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/tasks/3d699d0c-0224-4cf6-b3f1-697668fc7e54",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tasks",
+						"3d699d0c-0224-4cf6-b3f1-697668fc7e54"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addview",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MjcwNTE4LCJpYXQiOjE2OTYyNDE1MDMsImp0aSI6ImNjODMzMmU2MWU4NjQ3NGVhYTVhNDZhN2ZjN2U2NWYxIiwidXNlcl9pZCI6M30.KeBarrME08PmI8RWRzN2UY8q8_L_GbbE19HTEWdugZ8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"taskName\": \"Testing Add View\",\r\n        \"description\": \"Now testing add view\"\r\n}\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/tasks/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editview",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MjcwNTE4LCJpYXQiOjE2OTYyNDE1MDMsImp0aSI6ImNjODMzMmU2MWU4NjQ3NGVhYTVhNDZhN2ZjN2U2NWYxIiwidXNlcl9pZCI6M30.KeBarrME08PmI8RWRzN2UY8q8_L_GbbE19HTEWdugZ8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskName\": \"Testing Edit View\",\r\n    \"description\": \"Now testing Edit view\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/tasks/89736890-908f-4230-8a6a-aabad549e8e2/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tasks",
+						"89736890-908f-4230-8a6a-aabad549e8e2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MjcwNTE4LCJpYXQiOjE2OTYyNDE1MDMsImp0aSI6ImNjODMzMmU2MWU4NjQ3NGVhYTVhNDZhN2ZjN2U2NWYxIiwidXNlcl9pZCI6M30.KeBarrME08PmI8RWRzN2UY8q8_L_GbbE19HTEWdugZ8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/tasks/89736890-908f-4230-8a6a-aabad549e8e2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tasks",
+						"89736890-908f-4230-8a6a-aabad549e8e2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
