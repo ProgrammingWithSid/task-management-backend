@@ -41,6 +41,11 @@ Fetch all tasks.
   GET /tasks
 ```
 
+Header : 
+```
+  Authorization: JWT <token>
+```
+
 
 #### Get item
 
@@ -52,6 +57,11 @@ Fetch all tasks.
 | :-------- | :------- | :-------------------------------- |
 | `uuid`      | `uuid` | **Required**. Id of item to fetch |
 
+**Header :** 
+```
+  Authorization: JWT <token>
+```
+
 #### Add a new task
 
 ```http
@@ -61,6 +71,20 @@ Fetch all tasks.
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `uuid`      | `uuid` | **Required**. Id of item to fetch |
+
+**Header :** 
+```
+  Authorization: JWT <token>
+```
+
+**Body :**
+```
+{
+    "taskName": "Testing Add View",
+    "description": "Now testing add view"
+}
+```
+    
 
 
 #### Update a task
@@ -74,6 +98,20 @@ Fetch all tasks.
 | `uuid`      | `uuid` | **Required**. |
 
 
+**Header :** 
+```
+  Authorization: JWT <token>
+```
+
+**Body :**
+```
+{
+    "taskName": "Testing Add View",
+    "description": "Now testing add view"
+}
+```
+
+
 #### Delete a task
 
 ```http
@@ -83,6 +121,11 @@ Fetch all tasks.
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `uuid`      | `uuid` | **Required**. |
+
+**Header :** 
+```
+  Authorization: JWT <token>
+```
 
 #### Create a user
 
@@ -97,6 +140,17 @@ Fetch all tasks.
 | `password`      | `string` | **Required**. |
 | `re_password`      | `string` | **Required**.  |
 
+
+**Body :**
+```
+{
+    "email": "",
+    "name": "",
+    "password" : "",
+    "re_password" : ""
+}
+```
+
 #### Login a user
 
 
@@ -109,6 +163,14 @@ Fetch all tasks.
 | `password`      | `string` | **Required**. |
 
 
+**Body:** 
+```
+{
+    "email":"satender@gmail.com",
+    "password":"Sid@1234"
+}
+```
+
 #### Generate refresh token
 
 ```http
@@ -118,7 +180,11 @@ Fetch all tasks.
 | :-------- | :------- | :-------------------------------- |
 | `refresh`      | `string` | **Required**. |
 
-
+```
+{
+    "refresh":"<token_value>"
+}
+```
 
 
 # Connect @
