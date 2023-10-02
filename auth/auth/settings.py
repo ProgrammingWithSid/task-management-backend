@@ -85,15 +85,30 @@ CORS_ALLOW_CREDENTIALS = True
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+LOCAL_DB=True
+print(LOCAL_DB)
 
-DATABASES = {
+# DATABASE_ROUTERS = ['auth.dbrouter.CheckerRouter'] 
+
+if LOCAL_DB:
+    # Database
+    # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
+    }
+else:
+    DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME" : 'railway',
+            "NAME" : 'task_management',
             "USER" : 'postgres',
-            "PASSWORD" :'6y79NsNKot12SljxiTr4',
-            "HOST" :'containers-us-west-205.railway.app',
-            "PORT" : '5863',
+            "PASSWORD" :'1234',
+            "HOST" :'localhost',
+            "PORT" : '5432',
             # "NAME": ENV.str("DB_NAME", None),
             # "USER": ENV.str("DB_USER", None),
             # "PASSWORD": ENV.str("DB_PASSWORD", None),
@@ -101,7 +116,6 @@ DATABASES = {
             # "PORT": ENV.str("DB_PORT", None),
         }
     }
-
 # EMAIL_BACKEND = ENV.str('EMAIL_BACKEND',None)
 # EMAIL_HOST = ENV.str('EMAIL_HOST',None)
 # EMAIL_PORT = ENV.str('EMAIL_PORT',None)
@@ -171,12 +185,12 @@ DJOSER = {
     'USER_CREATE_PASSWORD_RETYPE' : True,
     'USERNAME_CHANGED_EMAIL_CONFIRMATION' : True,
     'PASSWORD_CHANGED_EMAIL_CONFIRMATION' : True,
-    'SEND_CONFIRMATION_EMAIL' : True,
+    #'SEND_CONFIRMATION_EMAIL' : True,
     'SET_PASSWORD_RETYPE' : True,
-    'PASSWORD_RESET_CONFIRM_URL' : 'password/reset/confirm/{uid}/{token}',
-    'USERNAME_RESET_CONFIRM_URL' : 'email/reset/confirm/{uid}/{token}',
-    'ACTIVATION_URL' : 'activate/{uid}/{token}',
-    'SEND_ACTIVATION_EMAIL' : False,
+    # 'PASSWORD_RESET_CONFIRM_URL' : 'password/reset/confirm/{uid}/{token}',
+    # 'USERNAME_RESET_CONFIRM_URL' : 'email/reset/confirm/{uid}/{token}',
+    # 'ACTIVATION_URL' : 'activate/{uid}/{token}',
+    # 'SEND_ACTIVATION_EMAIL' : False,
     'SERIALIZERS' : {
         'user_create' : 'users.serializers.CustomUserCreateSerializer',
         'user' : 'users.serializers.UserCreateSerializer',
