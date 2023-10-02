@@ -20,7 +20,7 @@ cd auth/
 # Install dependencies
 pip install -r requirements.txt
 # Serve at localhost:8000
-python manage.py createsuperuser
+python manage.py createsuperuser       
 python manage.py runserver
 
 API Endpoints
