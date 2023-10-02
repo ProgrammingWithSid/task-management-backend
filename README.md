@@ -17,21 +17,21 @@ Python
 git clone https://github.com/ProgrammingWithSid/task-management-backend.git
 
 cd auth/
-# Install dependencies
+# Install Dependencies
 pip install -r requirements.txt
-# Serve at localhost:8000
+# Server at localhost:8000
 python manage.py createsuperuser       
 python manage.py runserver
 
 API Endpoints
 
-• GET /tasks: Fetch all tasks.
-• GET /tasks/:id: Fetch a single task by ID.
-• POST /tasks: Add a new task.
-• PUT /tasks/:id: Update a task by ID.
-• DELETE /tasks/:id: Delete a task by ID.
+* GET /tasks: Fetch all tasks.
+* GET /tasks/:id: Fetch a single task by ID.
+* POST /tasks: Add a new task.
+* PUT /tasks/:id: Update a task by ID.
+* DELETE /tasks/:id: Delete a task by ID.
 
-## API Reference
+## API References
 
 #### Get all items
 
@@ -84,7 +84,7 @@ Fetch all tasks.
 | :-------- | :------- | :-------------------------------- |
 | `uuid`      | `uuid` | **Required**. |
 
-#### Create a User
+#### Create a user
 
 ```http
   POST /auth/users/
@@ -122,12 +122,12 @@ Fetch all tasks.
 
 
 # Connect @
-LinkedIn : https://www.linkedin.com/in/satender-kumar-600bb3179/
-Email : satenderk8700@gmail.com   
-Leetcode : https://leetcode.com/satenderk8700
+* LinkedIn: https://www.linkedin.com/in/satender-kumar-600bb3179/
+* Leetcode: https://leetcode.com/satenderk8700
+* Email: satenderk8700@gmail.com   
 
 # Personal
-Name : Satender Kumar  
+Name: Satender Kumar  
 
 # Gratitude
 Thank You
